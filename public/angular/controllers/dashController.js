@@ -22,16 +22,7 @@ myApp.controller('dashController',['$http','$q','apiService','authService','$roo
 				}else{
 				//console.log(response);
 				$rootScope.name=response.data.name;
-				$rootScope.email=response.data.email;
-				if(response.data.email === 'admin@queasy.com'){
-					$rootScope.admin = true;
-					
-				}else{
-					$rootScope.admin = false;
-					
-				}
-				
-		
+				$rootScope.admin = true;
 			}
 		});
 		}	
