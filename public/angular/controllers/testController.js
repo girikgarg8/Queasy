@@ -5,7 +5,6 @@ myApp.controller('testController',['$http','$window','$stateParams','$filter','a
 
 	// to reset the form after submission
 	this.resetForm=()=>{
-		test.testid='',
 		test.question='',
 		test.optionA='',
 		test.optionB='',
