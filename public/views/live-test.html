@@ -1,8 +1,6 @@
-
-
-
+<script src="../angular/controllers/livetestController.js"></script>
 <div  class="preview">
-    <timer  countdown="20"  max-time-unit="'minute'" interval="1000" ><b>Time Left: {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</b></timer>
+    <timer timer id="myTimer" countdown="5" max-time-unit="'minute'" interval="1000" ><b>Time Left: {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</b></timer>
     <div ng-repeat="question in liveCtrl.questions | startFrom:liveCtrl.currentPage*liveCtrl.pageSize | limitTo:1" class="questionsBox" >
 
      <div  class="questions">{{liveCtrl.currentPage+1}}. {{question.question}}</div>
