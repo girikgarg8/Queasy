@@ -42,9 +42,20 @@ myApp.controller("livetestController", [
     this.getUserDetail();
 
     //get the timing of a particular test
+    var firstTime = true;
     this.getTestTime = () => {
       apiService.viewTest(live.testid).then(function successCallBack(response) {
         live.testtime = response.data.data.time;
+        if (firstTime) {
+          $scope.$broadcast(
+            "timer-add-cd-seconds",
+            response.data.data.time * 60 - 5
+          );
+          firstTime = false;
+        }
+        console.log(response.data.data.time);
+        // var x = document.getElementById("myTimer");
+        // x.setAttribute("countdown", response.data.data.time);
       });
     };
     this.getTestTime(live.testid);
